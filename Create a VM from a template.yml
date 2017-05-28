@@ -1,0 +1,30 @@
+# Create a VM from a template
+  - name: create the VM
+    vmware_guest:
+      hostname: 192.0.2.44
+      username: administrator@vsphere.local
+      password: vmware
+      validate_certs: no
+      esxi_hostname: 192.0.2.117
+      datacenter: datacenter1
+      folder: testvms
+      name: testvm_2
+      state: poweredon
+      guest_id: centos64guest
+      disk:
+      - size_gb: 10
+        type: thin
+        datastore: g73_datastore
+      hardware:
+        memory_mb: 512
+        num_cpus: 1
+        scsi: paravirtual
+      networks:
+      - name: VM Network
+        ip: 192.168.1.100
+        netmask: 255.255.255.0
+        mac: 'aa:bb:dd:aa:00:14'
+      template: template_el7
+      wait_for_ip_address: yes
+    delegate_to: localhost
+    register: deploy
