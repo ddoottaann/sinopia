@@ -1,8 +1,6 @@
-
-- name: test raw module
-  hosts: windows
+- name: Hello World Sample
+  hosts: all
   tasks:
-    - name: run ipconfig
-      win_command: ipconfig
-      register: ipconfig
-    - debug: var=ipconfig
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
