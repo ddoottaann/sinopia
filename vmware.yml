@@ -7,11 +7,11 @@
     gather_facts: false
     connection: local
     vars:
-      vcenter_hostname: vcsa.box
-      esxhost: esx1.box
-      datastore: datastore1
+      vcenter_hostname: BackupSrv.nyotron.co.il
+      esxhost: esx03.ntotron.co.il
+      datastore: SAS-QA-Datasore
       network: "VMnetwork"
-      vmtemplate: CentOS7-Base
+      vmtemplate: "Win10 Pro X64 1703"
       vmcluster: LAN
       notes: Created by Ansible
       dumpfacts: False
@@ -35,7 +35,7 @@
           name: "{{ name }}"
           template: "{{ vmtemplate }}"
           disk:
-            - size_gb: 10
+            - size_gb: 20
               type: thin
               datastore: "{{ datastore }}"
           nic:
