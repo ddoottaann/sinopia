@@ -1,5 +1,5 @@
 - name: test raw module
-  hosts: windows
+ 
   tasks:
     - name: run ipconfig
       win_command: ipconfig
