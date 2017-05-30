@@ -7,8 +7,4 @@
    
 
 
-- name: test raw module
-  tasks:
-    win_tempfile:
-    state: file
-    suffix: temp
+
