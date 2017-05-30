@@ -7,7 +7,7 @@
    
 
 
-- name: Create temporary file
+- name: test raw module
   tasks:
     win_tempfile:
     state: file
