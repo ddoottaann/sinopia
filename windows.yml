@@ -6,7 +6,7 @@
       register: ipconfig
     - debug: var=ipconfig
     
-- name: Create temporary build directory
+ - name: Create temporary build directory
   win_tempfile:
     state: directory
     suffix: build
